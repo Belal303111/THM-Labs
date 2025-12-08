@@ -1,0 +1,14 @@
+1- scan the open ports -->(found ssh,http)
+2- use gobuster to found the hidden files or dirctories --> importatnt paths(/content/inc/,/content/as/)
+3- on /content/inc/ some important data as backup of the database and we can found the username and password in it (manager,42f749ade7f9e195bf475f37a44cafcb)
+4- the password in a hash we can use: https://hashes.com/en/decrypt/hash or https://crackstation.net/ to crack the hash(passwd: password123)
+5- now we can login the websit on the path /content/as/ 
+6- enter to ads page and upload reverse shell
+7- run the litener on terminal (nc -lvcp 1234) and open the path /content/inc/ads then open the file of reverse shell
+8- now we can use this command: sudo -l --> to know our privleges on the device (found: (ALL) NOPASSWD: /usr/bin/perl /home/itguy/backup.pl)
+9- we can go the /home/itguy --> in this folder we can find the user.txt file that contain the first flag)
+10- to esclate our privleges we can go to this path: /usr/bin and open the file perl (found: 
+11- privlege esclation: echo "/bin/bash" > /etc/copy.sh
+			sudo /usr/bin/perl /home/itguy/backup.pl
+congratulations you are the root
+12- enter the root folder and read the flag

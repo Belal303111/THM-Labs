@@ -1,0 +1,13 @@
+1- check ports --> found (ssh on port 2222, http )
+2- use gobuster to find hidden files or directories
+3- use hydra on the name found in the website to get the password
+4- enter the target machine and get the flag of the user
+5- esclater your privleges:
+ know you privleges on the machine: sudo -l --> (.vim)
+ search on the vim on GTFOBins.com and go to the privlege of sudo and get this command (sudo vim -c ':!/bin/sh')
+ now we are the root and can get the flag of root
+
+
+Resources:
+ https://medium.com/@skylarphenis/tryhackme-simple-ctf-walk-through-e8bb8c8671a9
+ https://github.com/substing/simple_ctf

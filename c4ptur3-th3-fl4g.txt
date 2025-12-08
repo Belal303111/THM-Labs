@@ -1,0 +1,24 @@
+In this lab we try to encode every thing
+Task1:
+1- Leet a.k.a l33t --> echo 'c4n y0u c4p7u23 7h3 f149?' | sed -e 's/4/a/g' -e 's/0/o/g' -e 's/7/t/g' -e 's/2/r/g' -e 's/3/e/g' -e 's/1/l/g' -e 's/9/g/g'
+2- inary to ASCII --> link: https://www.rapidtables.com/convert/number/binary-to-ascii.html
+3- Base32 --> echo "MJQXGZJTGIQGS4ZAON2XAZLSEBRW63LNN5XCA2LOEBBVIRRHOM======" | base32 --decode
+4- Base64 --> echo 'RWFjaCBCYXNlNjQgZGlnaXQgcmVwcmVzZW50cyBleGFjdGx5IDYgYml0cyBvZiBkYXRhLg==' | base64 -d
+5- Hex to ASCII --> echo "68657861646563696d616c206f72206261736531363f" | xxd -r -p
+6- Rot 13 --> echo "Ebgngr zr 13 cynprf!" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+7- Rot 47 --> echo "*@F DA:? >6 C:89E C@F?5 323J C:89E C@F?5 Wcf E:>6DX" | tr '!-~' 'P-~!-O'
+8- Just use Morse code translator.
+9- BCD to ASCII --> converter: https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html
+10- need some steps to encode the content, this steps is:
+  	Cipher 1: Base64
+	Cipher 2: Morse code
+	Cipher 3: Binary to ASCII
+	Cipher 4: ROT 47
+	Cipher 5: BCD to ASCII
+
+Task2:
+
+Resorces: 
+	https://embeddedworld.home.blog/2019/08/14/hacking-walkthrough-another-ctf-challenge/
+	https://medium.com/@alt123/c4ptur3-th3-fl4g-tryhackme-walkthrough-d0f8b1a2b543
+

@@ -1,0 +1,10 @@
+https://tryhackme.com/room/compiled
+
+
+
+tool: we downloaded ghidra in this lab to make a reverse engineering
+
+use ghidra to analys the file .compile
+found the final part of the password in the analyzing code --> _init
+
+then the password is: DoYouEven_init

