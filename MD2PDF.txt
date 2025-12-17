@@ -1,0 +1,8 @@
+1- scan the ip --> found open ports (22,80,5000)
+
+2- open ip in the browser on port 5000/admin page --> forbidden
+
+3- we can use a payload in the pdf converter by using iframe
+payload: <iframe src="http://localhost:5000/admin"</iframe>
+
+found the flag

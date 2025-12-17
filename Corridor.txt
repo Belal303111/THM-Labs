@@ -1,0 +1,11 @@
+1- Open the doors in the website to know the nuber of them 
+
+2- Take the hash code that appear in the url when open any door and crash the hash on CrackStation website
+
+3- After arrive to the last door now we know the number of them and try to access the hidden door
+
+4- Try the previous number and the next number of these numbers we found
+convert the number in MD5 by using https://www.hashgenerator.de/ webiste
+
+find the flag
+

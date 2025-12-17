@@ -1,0 +1,8 @@
+Lab on IDOR vulnerability
+
+1- open burp suite and put the ip of the machine as a target and open foxyproxy
+2- longin in as a guest (username: guest, password: guest)--> from page source
+3- send the login request to repeater
+4- change the id in the GET request 
+  from:/profile.php?user=guest 
+  to: /profile.php?user=admin

